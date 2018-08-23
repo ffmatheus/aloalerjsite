@@ -12,7 +12,6 @@ class RecordRequest extends Request
     {
         return [
             'origin_id' => 'required',
-            'progress_type_id' => 'required',
             'original' => 'required_without:record_id',
         ];
     }

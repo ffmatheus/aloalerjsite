@@ -22,10 +22,10 @@
         <table id="progressesTable" class="table table-striped table-bordered" cellspacing="0" width="100%">
             <thead>
             <tr>
-                <th>Visualizar</th>
-                <th>Tipo de Andamento</th>
                 <th>Origem</th>
+                <th>Tipo</th>
                 <th>Área</th>
+                <th>Tipo de Andamento</th>
                 <th>Solicitação</th>
             </tr>
             </thead>
@@ -33,22 +33,13 @@
             @forelse ($progresses as $progress)
                 <tr>
                     <td>
-                        <a class="btn btn-success" href="{{$progress->show_link}}">
-                            <i class="fa fa-external-link-square"></i>
-                        </a>
-                    </td>
-                    <td>
-                        @if(is_null($progress->progressType))
-                            N/C
-                        @else
-                            {{$progress->progressType->name}}
-                        @endIf
+                        <a href="{{ route('progresses.show', ['id' => $progress->id]) }}">{{ $progress->origin->name }}</a>
                     </td>
                     <td>
                         @if(is_null($progress->recordType))
                             N/C
                         @else
-                            {{ $progress->origin->name }}
+                            {{$progress->recordType->name}}
                         @endIf
                     </td>
                     <td>
@@ -56,6 +47,13 @@
                             N/C
                         @else
                             {{$progress->area->name}}
+                        @endIf
+                    </td>
+                    <td>
+                        @if(is_null($progress->progressType))
+                            N/C
+                        @else
+                            {{$progress->progressType->name}}
                         @endIf
                     </td>
                     <td>

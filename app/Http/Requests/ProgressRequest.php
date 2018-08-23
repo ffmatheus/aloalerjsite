@@ -10,10 +10,6 @@ class ProgressRequest extends Request
      */
     public function rules()
     {
-        return [
-            'origin_id' => 'required',
-            'original' => 'required',
-            'progress_type_id' => 'required',
-        ];
+        return ['origin_id' => 'required', 'original' => 'required'];
     }
 }

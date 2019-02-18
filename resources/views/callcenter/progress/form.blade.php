@@ -7,7 +7,7 @@
 
     <div class="mt-4">
         <div class="row">
-            <div class="col-md-8 offset-md-2 text-center">
+            <div class="col-lg-8 offset-lg-2 text-center">
                 <div class="section-title">
                     <ul class="aloalerj-breadcrumbs">
                         <li>
@@ -29,7 +29,7 @@
         </div>
 
         <div class="row">
-            <div class="col-md-8 offset-md-2 form-bigger">
+            <div class="col-lg-8 offset-lg-2 form-bigger">
                 <form id="formProgress" method="POST" action="{{ route('progresses.store') }}" class="form-with-labels">
                     @csrf
 
@@ -43,7 +43,7 @@
                         <input name="committee_id" type="hidden" value="{{ $record->committee->id ?? '' }}">
                     @endif
 
-                    <input name="record_id" type="hidden" value="{{ $record->id }}">
+                    <input name="record_id" id="record_id"type="hidden" value="{{ $record->id }}">
 
                     <div class="form-group row">
                         <div class="col-md-6">
@@ -180,7 +180,7 @@
                                 </button>
                             @endIf
 
-                            <button class="btn btn-danger" @can('committee-canEdit', !is_null($progress->committee) ? $progress->record->committee->id : ($record->committee->id ?? '')) @include('partials.disabled',['model'=>$progress]) @else disabled @endcan>
+                            <button class="btn btn-danger" id="saveButton" name="saveButton" @can('committee-canEdit', !is_null($progress->committee) ? $progress->record->committee->id : ($record->committee->id ?? '')) @include('partials.disabled',['model'=>$progress]) @else disabled @endcan>
                                 <i class="far fa-save"></i> Gravar
                             </button>
 

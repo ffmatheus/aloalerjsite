@@ -4,7 +4,7 @@
 <div id="vue-addresses">
     @parent
     <div class="row mt-4">
-        <div class="col-md-8 offset-md-2 text-center">
+        <div class="col-lg-8 offset-lg-2 text-center">
             <div class="section-title">
                 <ul class="aloalerj-breadcrumbs">
                     <li>
@@ -18,7 +18,7 @@
         </div>
     </div>
     <div class="row">
-        <div class="col-md-8 offset-md-2 form-bigger">
+        <div class="col-lg-8 offset-lg-2 form-bigger">
             <form method="POST" action="{{ route('people_addresses.store') }}" aria-label="Endereços"  class="form-with-labels">
                 @csrf
                 @if (isset($person))
@@ -49,7 +49,7 @@
                     </div>
                 </div>
                 <div class="form-group row">
-                    <div class="col-md-3">
+                    <div class="col-md-2">
                         <label for="zipcode" class="col-form-label">CEP</label>
                         <input id="zipcode"
                                name="zipcode"
@@ -66,7 +66,7 @@
                             <span class="invalid-feedback" role="alert"><strong>{{ $errors->getBag('validation')->first('zipcode') }}</strong></span>
                         @endif
                     </div>
-                    <div class="col-md-5">
+                    <div class="col-md-6">
                         <label for="street" class="col-form-label">Endereço</label>
                         <input id="street"
                                name="street"
@@ -98,7 +98,7 @@
                         @endif
                     </div>
                     <div class="col-md-2">
-                        <label for="complement" class="col-sm-2 col-form-label text-md-right">Complemento</label>
+                        <label for="complement" class="col-form-label text-md-right">Complemento</label>
                         <input id="complement"
                                name="complement"
                                value="{{is_null(old('complement')) ? $address->complement : old('complement') }}"
@@ -146,7 +146,7 @@
                         @endif
                     </div>
                     <div class="col-md-2">
-                        <label for="state" class="col-sm-1 col-form-label text-md-right">Estado</label>
+                        <label for="state" class="col-form-label text-md-right">Estado</label>
                         <input id="state"
                                name="state"
                                v-model="form.state"
@@ -194,12 +194,14 @@
                                 {{--</button>--}}
                             {{--</p>--}}
 
-                            <input type="hidden" name="active" value="0">
-                            <input
-                                type="checkbox"
-                                name="active" {{old('active') || $address->active ? 'checked="checked"' : ''}}
+                            <p class="checkbox">
+                                <input type="hidden" name="active" value="0">
+                                <input
+                                        type="checkbox"
+                                        name="active" {{old('active') || $address->active ? 'checked="checked"' : ''}}
                                         @include('partials.disabled',['model'=>$address])
-                            >
+                                >
+                            </p>
                         </div>
                     @else
                         <input type="hidden" name="active" value="1">

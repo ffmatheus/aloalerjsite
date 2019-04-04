@@ -16,8 +16,8 @@ class CommitteesSeeder extends Seeder
                 'texto' =>
                     '<p>A Comissão de Defesa dos Direitos do Consumidor zela pelos seus direitos enquanto consumidor, seja de serviços ou produtos. Ela se manifesta aos assuntos referentes à economia popular; à composição, qualidade, apresentação, publicidade e distribuição de bens e serviços; às relações de consumo e medidas de defesa do consumidor; e ao acolhimento e investigação de denúncias relacionados aos direitos do consumidor.</p>
      <p>Existem várias formas de entrar em contato com a comissão. Os atendimentos são feitos pelos canais do Alô Alerj ou presencialmente, na sala localizada no térreo do prédio da Alerj, na Rua da Alfândega, número 8. A comissão também vai até você por meio do Ônibus Itinerante, que faz rotas por todo o Estado. Para solicitar a presença do Ônibus da Defesa do Consumidor em seu bairro e conferir os itinerários já programados, <a href="http://www.alerj.rj.gov.br/cdc/" target="_blank"><strong>clique aqui</strong></a>.</p>',
-                'president' => 'Deputado Luiz Martins',
-                'vice_president' => 'Deputado Jânio Mendes',
+                'president' => 'Deputado Fabio Silva',
+                'vice_president' => 'Deputado Thiago Pampolha',
                 'public' => true,
                 'office_phone' => '0800 282-7060',
                 'office_address' =>
